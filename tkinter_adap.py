@@ -1470,7 +1470,6 @@ class SOCReportGenerator:
     def compile_report(self):
         report = []
         report.append("[!] ==================== L1 INVESTIGATION ==================== [!]")
-        report.append("")
 
         # Conclusion
         conclusion_content = self.conclusion_text.get("1.0", tk.END).strip()
@@ -1781,7 +1780,9 @@ class SOCReportGenerator:
                 if results:
                     report.append(f"  Results:\n  {results}")
                 report.append("")
-    
+
+        report.append("[!] ==================== L1 INVESTIGATION ==================== [!]")
+        
         return "\n".join(report)
 
 def main():
